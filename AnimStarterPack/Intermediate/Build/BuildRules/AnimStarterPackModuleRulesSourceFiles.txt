@@ -1,0 +1,3 @@
+C:\Users\owen\Documents\Unreal Projects\AnimStarterPack\Source\AnimStarterPack\AnimStarterPack.Build.cs
+C:\Users\owen\Documents\Unreal Projects\AnimStarterPack\Source\AnimStarterPack.Target.cs
+C:\Users\owen\Documents\Unreal Projects\AnimStarterPack\Source\AnimStarterPackEditor.Target.cs

@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="..\..\AnimStarterPack.uproject" />
+    <Filter Include="Source">
+      <UniqueIdentifier>{8872A6F3-9B21-42FD-AF62-99D7601C8D78}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\AnimStarterPack.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\Source\AnimStarterPackEditor.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <Filter Include="Config">
+      <UniqueIdentifier>{7E1872FE-D99F-400E-8AD0-C027E9069BC5}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\DefaultEditor.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEngine.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultGame.ini">
+      <Filter>Config</Filter>
+    </None>
+    <Filter Include="Source\AnimStarterPack">
+      <UniqueIdentifier>{8EB3A3BA-43AD-42A7-A070-2F9BD649085F}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\AnimStarterPack\AnimStarterPack.Build.cs">
+      <Filter>Source\AnimStarterPack</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\AnimStarterPack\AnimStarterPack.cpp">
+      <Filter>Source\AnimStarterPack</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\AnimStarterPack\AnimStarterPack.h">
+      <Filter>Source\AnimStarterPack</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\AnimStarterPack\AnimStarterPackGameModeBase.cpp">
+      <Filter>Source\AnimStarterPack</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\AnimStarterPack\AnimStarterPackGameModeBase.h">
+      <Filter>Source\AnimStarterPack</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\AnimStarterPack\ShooterCharacter.cpp">
+      <Filter>Source\AnimStarterPack</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\AnimStarterPack\ShooterCharacter.h">
+      <Filter>Source\AnimStarterPack</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
