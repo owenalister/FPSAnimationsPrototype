@@ -20,6 +20,9 @@ void EmptyLinkFunctionForGeneratedCodeShooterCharacter() {}
 	ENGINE_API UClass* Z_Construct_UClass_ACharacter();
 	ANIMSTARTERPACK_API UFunction* Z_Construct_UFunction_AShooterCharacter_MoveForward();
 	ANIMSTARTERPACK_API UFunction* Z_Construct_UFunction_AShooterCharacter_MoveRight();
+	ANIMSTARTERPACK_API UFunction* Z_Construct_UFunction_AShooterCharacter_ServerSetMaxWalkSpeed();
+	ANIMSTARTERPACK_API UFunction* Z_Construct_UFunction_AShooterCharacter_ServerSetSomeBool();
+	ANIMSTARTERPACK_API UFunction* Z_Construct_UFunction_AShooterCharacter_SetMaxWalkSpeed();
 	ANIMSTARTERPACK_API UFunction* Z_Construct_UFunction_AShooterCharacter_StartADS();
 	ANIMSTARTERPACK_API UFunction* Z_Construct_UFunction_AShooterCharacter_StartCrouch();
 	ANIMSTARTERPACK_API UFunction* Z_Construct_UFunction_AShooterCharacter_StartJog();
@@ -81,12 +84,29 @@ void EmptyLinkFunctionForGeneratedCodeShooterCharacter() {}
 		}
 		return ReturnEnum;
 	}
+	static FName NAME_AShooterCharacter_ServerSetMaxWalkSpeed = FName(TEXT("ServerSetMaxWalkSpeed"));
+	void AShooterCharacter::ServerSetMaxWalkSpeed(float speed)
+	{
+		ShooterCharacter_eventServerSetMaxWalkSpeed_Parms Parms;
+		Parms.speed=speed;
+		ProcessEvent(FindFunctionChecked(NAME_AShooterCharacter_ServerSetMaxWalkSpeed),&Parms);
+	}
+	static FName NAME_AShooterCharacter_ServerSetSomeBool = FName(TEXT("ServerSetSomeBool"));
+	void AShooterCharacter::ServerSetSomeBool(bool bNewSomeBool)
+	{
+		ShooterCharacter_eventServerSetSomeBool_Parms Parms;
+		Parms.bNewSomeBool=bNewSomeBool ? true : false;
+		ProcessEvent(FindFunctionChecked(NAME_AShooterCharacter_ServerSetSomeBool),&Parms);
+	}
 	void AShooterCharacter::StaticRegisterNativesAShooterCharacter()
 	{
 		UClass* Class = AShooterCharacter::StaticClass();
 		static const FNameNativePtrPair Funcs[] = {
 			{ "MoveForward", &AShooterCharacter::execMoveForward },
 			{ "MoveRight", &AShooterCharacter::execMoveRight },
+			{ "ServerSetMaxWalkSpeed", &AShooterCharacter::execServerSetMaxWalkSpeed },
+			{ "ServerSetSomeBool", &AShooterCharacter::execServerSetSomeBool },
+			{ "SetMaxWalkSpeed", &AShooterCharacter::execSetMaxWalkSpeed },
 			{ "StartADS", &AShooterCharacter::execStartADS },
 			{ "StartCrouch", &AShooterCharacter::execStartCrouch },
 			{ "StartJog", &AShooterCharacter::execStartJog },
@@ -159,6 +179,100 @@ void EmptyLinkFunctionForGeneratedCodeShooterCharacter() {}
 		if (!ReturnFunction)
 		{
 			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_AShooterCharacter_MoveRight_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_AShooterCharacter_ServerSetMaxWalkSpeed_Statics
+	{
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_speed;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UFunction_AShooterCharacter_ServerSetMaxWalkSpeed_Statics::NewProp_speed = { UE4CodeGen_Private::EPropertyClass::Float, "speed", RF_Public|RF_Transient|RF_MarkAsNative, (EPropertyFlags)0x0010000000000080, 1, nullptr, STRUCT_OFFSET(ShooterCharacter_eventServerSetMaxWalkSpeed_Parms, speed), METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AShooterCharacter_ServerSetMaxWalkSpeed_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AShooterCharacter_ServerSetMaxWalkSpeed_Statics::NewProp_speed,
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AShooterCharacter_ServerSetMaxWalkSpeed_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "ShooterCharacter.h" },
+		{ "ToolTip", "set max walk speed" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_AShooterCharacter_ServerSetMaxWalkSpeed_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AShooterCharacter, "ServerSetMaxWalkSpeed", RF_Public|RF_Transient|RF_MarkAsNative, nullptr, (EFunctionFlags)0x80220CC0, sizeof(ShooterCharacter_eventServerSetMaxWalkSpeed_Parms), Z_Construct_UFunction_AShooterCharacter_ServerSetMaxWalkSpeed_Statics::PropPointers, ARRAY_COUNT(Z_Construct_UFunction_AShooterCharacter_ServerSetMaxWalkSpeed_Statics::PropPointers), 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AShooterCharacter_ServerSetMaxWalkSpeed_Statics::Function_MetaDataParams, ARRAY_COUNT(Z_Construct_UFunction_AShooterCharacter_ServerSetMaxWalkSpeed_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_AShooterCharacter_ServerSetMaxWalkSpeed()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_AShooterCharacter_ServerSetMaxWalkSpeed_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_AShooterCharacter_ServerSetSomeBool_Statics
+	{
+		static void NewProp_bNewSomeBool_SetBit(void* Obj);
+		static const UE4CodeGen_Private::FBoolPropertyParams NewProp_bNewSomeBool;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+	void Z_Construct_UFunction_AShooterCharacter_ServerSetSomeBool_Statics::NewProp_bNewSomeBool_SetBit(void* Obj)
+	{
+		((ShooterCharacter_eventServerSetSomeBool_Parms*)Obj)->bNewSomeBool = 1;
+	}
+	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_AShooterCharacter_ServerSetSomeBool_Statics::NewProp_bNewSomeBool = { UE4CodeGen_Private::EPropertyClass::Bool, "bNewSomeBool", RF_Public|RF_Transient|RF_MarkAsNative, (EPropertyFlags)0x0010000000000080, 1, nullptr, sizeof(bool), UE4CodeGen_Private::ENativeBool::Native, sizeof(ShooterCharacter_eventServerSetSomeBool_Parms), &Z_Construct_UFunction_AShooterCharacter_ServerSetSomeBool_Statics::NewProp_bNewSomeBool_SetBit, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AShooterCharacter_ServerSetSomeBool_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AShooterCharacter_ServerSetSomeBool_Statics::NewProp_bNewSomeBool,
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AShooterCharacter_ServerSetSomeBool_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "ShooterCharacter.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_AShooterCharacter_ServerSetSomeBool_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AShooterCharacter, "ServerSetSomeBool", RF_Public|RF_Transient|RF_MarkAsNative, nullptr, (EFunctionFlags)0x80220CC0, sizeof(ShooterCharacter_eventServerSetSomeBool_Parms), Z_Construct_UFunction_AShooterCharacter_ServerSetSomeBool_Statics::PropPointers, ARRAY_COUNT(Z_Construct_UFunction_AShooterCharacter_ServerSetSomeBool_Statics::PropPointers), 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AShooterCharacter_ServerSetSomeBool_Statics::Function_MetaDataParams, ARRAY_COUNT(Z_Construct_UFunction_AShooterCharacter_ServerSetSomeBool_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_AShooterCharacter_ServerSetSomeBool()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_AShooterCharacter_ServerSetSomeBool_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_AShooterCharacter_SetMaxWalkSpeed_Statics
+	{
+		struct ShooterCharacter_eventSetMaxWalkSpeed_Parms
+		{
+			float speed;
+		};
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_speed;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UFunction_AShooterCharacter_SetMaxWalkSpeed_Statics::NewProp_speed = { UE4CodeGen_Private::EPropertyClass::Float, "speed", RF_Public|RF_Transient|RF_MarkAsNative, (EPropertyFlags)0x0010000000000080, 1, nullptr, STRUCT_OFFSET(ShooterCharacter_eventSetMaxWalkSpeed_Parms, speed), METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AShooterCharacter_SetMaxWalkSpeed_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AShooterCharacter_SetMaxWalkSpeed_Statics::NewProp_speed,
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AShooterCharacter_SetMaxWalkSpeed_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "ShooterCharacter.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_AShooterCharacter_SetMaxWalkSpeed_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AShooterCharacter, "SetMaxWalkSpeed", RF_Public|RF_Transient|RF_MarkAsNative, nullptr, (EFunctionFlags)0x00020401, sizeof(ShooterCharacter_eventSetMaxWalkSpeed_Parms), Z_Construct_UFunction_AShooterCharacter_SetMaxWalkSpeed_Statics::PropPointers, ARRAY_COUNT(Z_Construct_UFunction_AShooterCharacter_SetMaxWalkSpeed_Statics::PropPointers), 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AShooterCharacter_SetMaxWalkSpeed_Statics::Function_MetaDataParams, ARRAY_COUNT(Z_Construct_UFunction_AShooterCharacter_SetMaxWalkSpeed_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_AShooterCharacter_SetMaxWalkSpeed()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_AShooterCharacter_SetMaxWalkSpeed_Statics::FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -358,6 +472,11 @@ void EmptyLinkFunctionForGeneratedCodeShooterCharacter() {}
 		static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
 #if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_testBool_MetaData[];
+#endif
+		static void NewProp_testBool_SetBit(void* Obj);
+		static const UE4CodeGen_Private::FBoolPropertyParams NewProp_testBool;
+#if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_aimPitch_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_aimPitch;
@@ -413,6 +532,9 @@ void EmptyLinkFunctionForGeneratedCodeShooterCharacter() {}
 	const FClassFunctionLinkInfo Z_Construct_UClass_AShooterCharacter_Statics::FuncInfo[] = {
 		{ &Z_Construct_UFunction_AShooterCharacter_MoveForward, "MoveForward" }, // 3063487547
 		{ &Z_Construct_UFunction_AShooterCharacter_MoveRight, "MoveRight" }, // 3797358591
+		{ &Z_Construct_UFunction_AShooterCharacter_ServerSetMaxWalkSpeed, "ServerSetMaxWalkSpeed" }, // 369515209
+		{ &Z_Construct_UFunction_AShooterCharacter_ServerSetSomeBool, "ServerSetSomeBool" }, // 2266409760
+		{ &Z_Construct_UFunction_AShooterCharacter_SetMaxWalkSpeed, "SetMaxWalkSpeed" }, // 2932728018
 		{ &Z_Construct_UFunction_AShooterCharacter_StartADS, "StartADS" }, // 3199592265
 		{ &Z_Construct_UFunction_AShooterCharacter_StartCrouch, "StartCrouch" }, // 2892820643
 		{ &Z_Construct_UFunction_AShooterCharacter_StartJog, "StartJog" }, // 81677094
@@ -429,6 +551,17 @@ void EmptyLinkFunctionForGeneratedCodeShooterCharacter() {}
 		{ "ModuleRelativePath", "ShooterCharacter.h" },
 	};
 #endif
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AShooterCharacter_Statics::NewProp_testBool_MetaData[] = {
+		{ "Category", "ShooterCharacter" },
+		{ "ModuleRelativePath", "ShooterCharacter.h" },
+	};
+#endif
+	void Z_Construct_UClass_AShooterCharacter_Statics::NewProp_testBool_SetBit(void* Obj)
+	{
+		((AShooterCharacter*)Obj)->testBool = 1;
+	}
+	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_AShooterCharacter_Statics::NewProp_testBool = { UE4CodeGen_Private::EPropertyClass::Bool, "testBool", RF_Public|RF_Transient|RF_MarkAsNative, (EPropertyFlags)0x0020080000000005, 1, nullptr, sizeof(bool), UE4CodeGen_Private::ENativeBool::Native, sizeof(AShooterCharacter), &Z_Construct_UClass_AShooterCharacter_Statics::NewProp_testBool_SetBit, METADATA_PARAMS(Z_Construct_UClass_AShooterCharacter_Statics::NewProp_testBool_MetaData, ARRAY_COUNT(Z_Construct_UClass_AShooterCharacter_Statics::NewProp_testBool_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AShooterCharacter_Statics::NewProp_aimPitch_MetaData[] = {
 		{ "Category", "ShooterCharacter" },
@@ -519,6 +652,7 @@ void EmptyLinkFunctionForGeneratedCodeShooterCharacter() {}
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AShooterCharacter_Statics::NewProp_Camera = { UE4CodeGen_Private::EPropertyClass::Object, "Camera", RF_Public|RF_Transient|RF_MarkAsNative, (EPropertyFlags)0x002008000008000d, 1, nullptr, STRUCT_OFFSET(AShooterCharacter, Camera), Z_Construct_UClass_UCameraComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AShooterCharacter_Statics::NewProp_Camera_MetaData, ARRAY_COUNT(Z_Construct_UClass_AShooterCharacter_Statics::NewProp_Camera_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AShooterCharacter_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AShooterCharacter_Statics::NewProp_testBool,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AShooterCharacter_Statics::NewProp_aimPitch,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AShooterCharacter_Statics::NewProp_SprintSpeed,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AShooterCharacter_Statics::NewProp_CrouchSpeed,
@@ -554,7 +688,7 @@ void EmptyLinkFunctionForGeneratedCodeShooterCharacter() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AShooterCharacter, 3145819289);
+	IMPLEMENT_CLASS(AShooterCharacter, 3861443695);
 	static FCompiledInDefer Z_CompiledInDefer_UClass_AShooterCharacter(Z_Construct_UClass_AShooterCharacter, &AShooterCharacter::StaticClass, TEXT("/Script/AnimStarterPack"), TEXT("AShooterCharacter"), false, nullptr, nullptr, nullptr);
 	DEFINE_VTABLE_PTR_HELPER_CTOR(AShooterCharacter);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

@@ -14,6 +14,47 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #define ANIMSTARTERPACK_ShooterCharacter_generated_h
 
 #define AnimStarterPack_Source_AnimStarterPack_ShooterCharacter_h_24_RPC_WRAPPERS \
+	virtual bool ServerSetSomeBool_Validate(bool ); \
+	virtual void ServerSetSomeBool_Implementation(bool bNewSomeBool); \
+	virtual bool ServerSetMaxWalkSpeed_Validate(float ); \
+	virtual void ServerSetMaxWalkSpeed_Implementation(float speed); \
+ \
+	DECLARE_FUNCTION(execServerSetSomeBool) \
+	{ \
+		P_GET_UBOOL(Z_Param_bNewSomeBool); \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		if (!P_THIS->ServerSetSomeBool_Validate(Z_Param_bNewSomeBool)) \
+		{ \
+			RPC_ValidateFailed(TEXT("ServerSetSomeBool_Validate")); \
+			return; \
+		} \
+		P_THIS->ServerSetSomeBool_Implementation(Z_Param_bNewSomeBool); \
+		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execSetMaxWalkSpeed) \
+	{ \
+		P_GET_PROPERTY(UFloatProperty,Z_Param_speed); \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		P_THIS->SetMaxWalkSpeed(Z_Param_speed); \
+		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execServerSetMaxWalkSpeed) \
+	{ \
+		P_GET_PROPERTY(UFloatProperty,Z_Param_speed); \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		if (!P_THIS->ServerSetMaxWalkSpeed_Validate(Z_Param_speed)) \
+		{ \
+			RPC_ValidateFailed(TEXT("ServerSetMaxWalkSpeed_Validate")); \
+			return; \
+		} \
+		P_THIS->ServerSetMaxWalkSpeed_Implementation(Z_Param_speed); \
+		P_NATIVE_END; \
+	} \
  \
 	DECLARE_FUNCTION(execStopADS) \
 	{ \
@@ -99,6 +140,47 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 
 
 #define AnimStarterPack_Source_AnimStarterPack_ShooterCharacter_h_24_RPC_WRAPPERS_NO_PURE_DECLS \
+	virtual bool ServerSetSomeBool_Validate(bool ); \
+	virtual void ServerSetSomeBool_Implementation(bool bNewSomeBool); \
+	virtual bool ServerSetMaxWalkSpeed_Validate(float ); \
+	virtual void ServerSetMaxWalkSpeed_Implementation(float speed); \
+ \
+	DECLARE_FUNCTION(execServerSetSomeBool) \
+	{ \
+		P_GET_UBOOL(Z_Param_bNewSomeBool); \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		if (!P_THIS->ServerSetSomeBool_Validate(Z_Param_bNewSomeBool)) \
+		{ \
+			RPC_ValidateFailed(TEXT("ServerSetSomeBool_Validate")); \
+			return; \
+		} \
+		P_THIS->ServerSetSomeBool_Implementation(Z_Param_bNewSomeBool); \
+		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execSetMaxWalkSpeed) \
+	{ \
+		P_GET_PROPERTY(UFloatProperty,Z_Param_speed); \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		P_THIS->SetMaxWalkSpeed(Z_Param_speed); \
+		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execServerSetMaxWalkSpeed) \
+	{ \
+		P_GET_PROPERTY(UFloatProperty,Z_Param_speed); \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		if (!P_THIS->ServerSetMaxWalkSpeed_Validate(Z_Param_speed)) \
+		{ \
+			RPC_ValidateFailed(TEXT("ServerSetMaxWalkSpeed_Validate")); \
+			return; \
+		} \
+		P_THIS->ServerSetMaxWalkSpeed_Implementation(Z_Param_speed); \
+		P_NATIVE_END; \
+	} \
  \
 	DECLARE_FUNCTION(execStopADS) \
 	{ \
@@ -183,6 +265,18 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 	}
 
 
+#define AnimStarterPack_Source_AnimStarterPack_ShooterCharacter_h_24_EVENT_PARMS \
+	struct ShooterCharacter_eventServerSetMaxWalkSpeed_Parms \
+	{ \
+		float speed; \
+	}; \
+	struct ShooterCharacter_eventServerSetSomeBool_Parms \
+	{ \
+		bool bNewSomeBool; \
+	};
+
+
+#define AnimStarterPack_Source_AnimStarterPack_ShooterCharacter_h_24_CALLBACK_WRAPPERS
 #define AnimStarterPack_Source_AnimStarterPack_ShooterCharacter_h_24_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAShooterCharacter(); \
@@ -235,15 +329,20 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(AShooterCharacter); \
 	FORCEINLINE static uint32 __PPO__JogSpeed() { return STRUCT_OFFSET(AShooterCharacter, JogSpeed); } \
 	FORCEINLINE static uint32 __PPO__CrouchSpeed() { return STRUCT_OFFSET(AShooterCharacter, CrouchSpeed); } \
 	FORCEINLINE static uint32 __PPO__SprintSpeed() { return STRUCT_OFFSET(AShooterCharacter, SprintSpeed); } \
-	FORCEINLINE static uint32 __PPO__aimPitch() { return STRUCT_OFFSET(AShooterCharacter, aimPitch); }
+	FORCEINLINE static uint32 __PPO__aimPitch() { return STRUCT_OFFSET(AShooterCharacter, aimPitch); } \
+	FORCEINLINE static uint32 __PPO__testBool() { return STRUCT_OFFSET(AShooterCharacter, testBool); }
 
 
-#define AnimStarterPack_Source_AnimStarterPack_ShooterCharacter_h_21_PROLOG
+#define AnimStarterPack_Source_AnimStarterPack_ShooterCharacter_h_21_PROLOG \
+	AnimStarterPack_Source_AnimStarterPack_ShooterCharacter_h_24_EVENT_PARMS
+
+
 #define AnimStarterPack_Source_AnimStarterPack_ShooterCharacter_h_24_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
 	AnimStarterPack_Source_AnimStarterPack_ShooterCharacter_h_24_PRIVATE_PROPERTY_OFFSET \
 	AnimStarterPack_Source_AnimStarterPack_ShooterCharacter_h_24_RPC_WRAPPERS \
+	AnimStarterPack_Source_AnimStarterPack_ShooterCharacter_h_24_CALLBACK_WRAPPERS \
 	AnimStarterPack_Source_AnimStarterPack_ShooterCharacter_h_24_INCLASS \
 	AnimStarterPack_Source_AnimStarterPack_ShooterCharacter_h_24_STANDARD_CONSTRUCTORS \
 public: \
@@ -255,6 +354,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
 	AnimStarterPack_Source_AnimStarterPack_ShooterCharacter_h_24_PRIVATE_PROPERTY_OFFSET \
 	AnimStarterPack_Source_AnimStarterPack_ShooterCharacter_h_24_RPC_WRAPPERS_NO_PURE_DECLS \
+	AnimStarterPack_Source_AnimStarterPack_ShooterCharacter_h_24_CALLBACK_WRAPPERS \
 	AnimStarterPack_Source_AnimStarterPack_ShooterCharacter_h_24_INCLASS_NO_PURE_DECLS \
 	AnimStarterPack_Source_AnimStarterPack_ShooterCharacter_h_24_ENHANCED_CONSTRUCTORS \
 private: \

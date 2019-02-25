@@ -86,7 +86,7 @@ void AShooterCharacter::StopJump()
 
 void AShooterCharacter::StartJog()
 {
-	GetCharacterMovement()->MaxWalkSpeed = SprintSpeed;
+	SetMaxWalkSpeed(SprintSpeed);
 	JogPressed = true;
 }
 
@@ -95,10 +95,10 @@ void AShooterCharacter::StopJog()
 	JogPressed = false;
 	if (CrouchPressed)
 	{
-		GetCharacterMovement()->MaxWalkSpeed = CrouchSpeed;
+		SetMaxWalkSpeed(CrouchSpeed);
 	}
 	else {
-		GetCharacterMovement()->MaxWalkSpeed = JogSpeed;
+		SetMaxWalkSpeed(JogSpeed);
 	}
 	if (ADSPressed)
 		IsADS = true;
@@ -107,7 +107,7 @@ void AShooterCharacter::StopJog()
 void AShooterCharacter::StartCrouch()
 {
 	CrouchPressed = true;
-	GetCharacterMovement()->MaxWalkSpeed = CrouchSpeed;
+	SetMaxWalkSpeed(CrouchSpeed);
 }
 
 void AShooterCharacter::StopCrouch()
@@ -115,11 +115,11 @@ void AShooterCharacter::StopCrouch()
 	CrouchPressed = false;
 	if(JogPressed)
 	{
-		GetCharacterMovement()->MaxWalkSpeed = SprintSpeed;
+		SetMaxWalkSpeed(SprintSpeed);
 	}
 	else
 	{
-		GetCharacterMovement()->MaxWalkSpeed = JogSpeed;
+		SetMaxWalkSpeed(JogSpeed);
 	}
 }
 
@@ -130,12 +130,58 @@ void AShooterCharacter::StartADS()
 	{
 		IsADS = true;
 	}
+	SetSomeBool(true);
 }
 
 void AShooterCharacter::StopADS()
 {
 	ADSPressed = false;
 	IsADS = false;
+}
+
+
+void AShooterCharacter::SetMaxWalkSpeed(float speed)
+{
+	GetCharacterMovement()->MaxWalkSpeed = speed;
+
+	if (Role < ROLE_Authority)
+	{
+		ServerSetMaxWalkSpeed(speed);
+	}
+}
+bool AShooterCharacter::ServerSetMaxWalkSpeed_Validate(float speed)
+{
+	return true;
+}
+
+void AShooterCharacter::ServerSetMaxWalkSpeed_Implementation(float speed)
+{
+	// This function is only called on the server (where Role == ROLE_Authority), called over the network by clients.
+	// We need to call SetSomeBool() to actually change the value of the bool now!
+	// Inside that function, Role == ROLE_Authority, so it won't try to call ServerSetSomeBool() again.
+	SetMaxWalkSpeed(speed);
+}
+
+void AShooterCharacter::SetSomeBool(bool bNewSomeBool)
+{
+	testBool = bNewSomeBool;
+	if (Role < ROLE_Authority)
+	{
+		ServerSetSomeBool(bNewSomeBool);
+	}
+}
+
+bool AShooterCharacter::ServerSetSomeBool_Validate(bool bNewSomeBool)
+{
+	return true;
+}
+
+void AShooterCharacter::ServerSetSomeBool_Implementation(bool bNewSomeBool)
+{
+	// This function is only called on the server (where Role == ROLE_Authority), called over the network by clients.
+	// We need to call SetSomeBool() to actually change the value of the bool now!
+	// Inside that function, Role == ROLE_Authority, so it won't try to call ServerSetSomeBool() again.
+	SetSomeBool(bNewSomeBool);
 }
 
 void AShooterCharacter::GetLifetimeReplicatedProps(TArray< FLifetimeProperty > & OutLifetimeProps) const

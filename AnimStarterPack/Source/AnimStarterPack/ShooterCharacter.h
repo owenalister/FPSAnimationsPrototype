@@ -63,6 +63,9 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	bool testBool;
+
 
 public:	
 	// Called every frame
@@ -108,6 +111,21 @@ public:
 	// Deactivate crouch flag
 	UFUNCTION()
 	void StopADS();
+
+	//set max walk speed
+	UFUNCTION(reliable, server, WithValidation)
+	void ServerSetMaxWalkSpeed(float speed);
+
+	UFUNCTION()
+	void SetMaxWalkSpeed(float speed);
+
+	
+	void SetSomeBool(bool bNewSomeBool);
+
+	UFUNCTION(reliable, server, WithValidation)
+	void ServerSetSomeBool(bool bNewSomeBool);
+
+	//replicate variables
 	void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const;
 };
 
