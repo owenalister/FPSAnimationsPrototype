@@ -1,0 +1,17 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UE4Editor-AnimStarterPack-1104.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"C:\Users\owen\Documents\GitHub\FPSAnimationsPrototype\AnimStarterPack\Intermediate\Build\Win64\AnimStarterPackEditor\Development\Engine\SharedPCH.Engine.h.obj"
+"C:\Users\owen\Documents\GitHub\FPSAnimationsPrototype\AnimStarterPack\Intermediate\Build\Win64\UE4Editor\Development\AnimStarterPack\AnimStarterPack.cpp.obj"
+"C:\Users\owen\Documents\GitHub\FPSAnimationsPrototype\AnimStarterPack\Intermediate\Build\Win64\UE4Editor\Development\AnimStarterPack\AnimStarterPackGameModeBase.cpp.obj"
+"C:\Users\owen\Documents\GitHub\FPSAnimationsPrototype\AnimStarterPack\Intermediate\Build\Win64\UE4Editor\Development\AnimStarterPack\ShooterCharacter.cpp.obj"
+"C:\Users\owen\Documents\GitHub\FPSAnimationsPrototype\AnimStarterPack\Intermediate\Build\Win64\UE4Editor\Development\AnimStarterPack\AnimStarterPack.init.gen.cpp.obj"
+"C:\Users\owen\Documents\GitHub\FPSAnimationsPrototype\AnimStarterPack\Intermediate\Build\Win64\UE4Editor\Development\AnimStarterPack\AnimStarterPackGameModeBase.gen.cpp.obj"
+"C:\Users\owen\Documents\GitHub\FPSAnimationsPrototype\AnimStarterPack\Intermediate\Build\Win64\UE4Editor\Development\AnimStarterPack\ShooterCharacter.gen.cpp.obj"
+"C:\Users\owen\Documents\GitHub\FPSAnimationsPrototype\AnimStarterPack\Intermediate\Build\Win64\UE4Editor\Development\AnimStarterPack\PCLaunch.rc.res"
+/OUT:"C:\Users\owen\Documents\GitHub\FPSAnimationsPrototype\AnimStarterPack\Intermediate\Build\Win64\UE4Editor\Development\AnimStarterPack\UE4Editor-AnimStarterPack-1104.lib"

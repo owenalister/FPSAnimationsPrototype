@@ -1,6 +1,7 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 #include "ShooterCharacter.h"
+#include "UnrealNetwork.h"
 
 // Sets default values
 AShooterCharacter::AShooterCharacter()
@@ -29,7 +30,11 @@ void AShooterCharacter::BeginPlay()
 void AShooterCharacter::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-
+	if (IsLocallyControlled()) 
+	{
+		aimPitch = Camera->GetComponentRotation().Pitch;
+	}
+	
 }
 
 // Called to bind functionality to input
@@ -131,4 +136,15 @@ void AShooterCharacter::StopADS()
 {
 	ADSPressed = false;
 	IsADS = false;
+}
+
+void AShooterCharacter::GetLifetimeReplicatedProps(TArray< FLifetimeProperty > & OutLifetimeProps) const
+{
+	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
+
+	// Replicate to everyone
+	DOREPLIFETIME(AShooterCharacter, IsADS);
+	DOREPLIFETIME(AShooterCharacter, CrouchPressed);
+	DOREPLIFETIME(AShooterCharacter, JogPressed);
+	DOREPLIFETIME(AShooterCharacter, aimPitch);
 }

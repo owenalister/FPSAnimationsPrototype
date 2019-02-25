@@ -234,7 +234,8 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(AShooterCharacter); \
 	FORCEINLINE static uint32 __PPO__IsADS() { return STRUCT_OFFSET(AShooterCharacter, IsADS); } \
 	FORCEINLINE static uint32 __PPO__JogSpeed() { return STRUCT_OFFSET(AShooterCharacter, JogSpeed); } \
 	FORCEINLINE static uint32 __PPO__CrouchSpeed() { return STRUCT_OFFSET(AShooterCharacter, CrouchSpeed); } \
-	FORCEINLINE static uint32 __PPO__SprintSpeed() { return STRUCT_OFFSET(AShooterCharacter, SprintSpeed); }
+	FORCEINLINE static uint32 __PPO__SprintSpeed() { return STRUCT_OFFSET(AShooterCharacter, SprintSpeed); } \
+	FORCEINLINE static uint32 __PPO__aimPitch() { return STRUCT_OFFSET(AShooterCharacter, aimPitch); }
 
 
 #define AnimStarterPack_Source_AnimStarterPack_ShooterCharacter_h_21_PROLOG

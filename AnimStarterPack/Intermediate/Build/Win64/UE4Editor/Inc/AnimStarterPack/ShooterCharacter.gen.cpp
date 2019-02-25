@@ -358,6 +358,10 @@ void EmptyLinkFunctionForGeneratedCodeShooterCharacter() {}
 		static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
 #if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_aimPitch_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_aimPitch;
+#if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_SprintSpeed_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_SprintSpeed;
@@ -426,6 +430,13 @@ void EmptyLinkFunctionForGeneratedCodeShooterCharacter() {}
 	};
 #endif
 #if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AShooterCharacter_Statics::NewProp_aimPitch_MetaData[] = {
+		{ "Category", "ShooterCharacter" },
+		{ "ModuleRelativePath", "ShooterCharacter.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AShooterCharacter_Statics::NewProp_aimPitch = { UE4CodeGen_Private::EPropertyClass::Float, "aimPitch", RF_Public|RF_Transient|RF_MarkAsNative, (EPropertyFlags)0x0020080000000025, 1, nullptr, STRUCT_OFFSET(AShooterCharacter, aimPitch), METADATA_PARAMS(Z_Construct_UClass_AShooterCharacter_Statics::NewProp_aimPitch_MetaData, ARRAY_COUNT(Z_Construct_UClass_AShooterCharacter_Statics::NewProp_aimPitch_MetaData)) };
+#if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AShooterCharacter_Statics::NewProp_SprintSpeed_MetaData[] = {
 		{ "Category", "ShooterCharacter" },
 		{ "ModuleRelativePath", "ShooterCharacter.h" },
@@ -456,7 +467,7 @@ void EmptyLinkFunctionForGeneratedCodeShooterCharacter() {}
 	{
 		((AShooterCharacter*)Obj)->IsADS = 1;
 	}
-	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_AShooterCharacter_Statics::NewProp_IsADS = { UE4CodeGen_Private::EPropertyClass::Bool, "IsADS", RF_Public|RF_Transient|RF_MarkAsNative, (EPropertyFlags)0x0020080000000005, 1, nullptr, sizeof(bool), UE4CodeGen_Private::ENativeBool::Native, sizeof(AShooterCharacter), &Z_Construct_UClass_AShooterCharacter_Statics::NewProp_IsADS_SetBit, METADATA_PARAMS(Z_Construct_UClass_AShooterCharacter_Statics::NewProp_IsADS_MetaData, ARRAY_COUNT(Z_Construct_UClass_AShooterCharacter_Statics::NewProp_IsADS_MetaData)) };
+	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_AShooterCharacter_Statics::NewProp_IsADS = { UE4CodeGen_Private::EPropertyClass::Bool, "IsADS", RF_Public|RF_Transient|RF_MarkAsNative, (EPropertyFlags)0x0020080000000025, 1, nullptr, sizeof(bool), UE4CodeGen_Private::ENativeBool::Native, sizeof(AShooterCharacter), &Z_Construct_UClass_AShooterCharacter_Statics::NewProp_IsADS_SetBit, METADATA_PARAMS(Z_Construct_UClass_AShooterCharacter_Statics::NewProp_IsADS_MetaData, ARRAY_COUNT(Z_Construct_UClass_AShooterCharacter_Statics::NewProp_IsADS_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AShooterCharacter_Statics::NewProp_ADSPressed_MetaData[] = {
 		{ "Category", "ShooterCharacter" },
@@ -486,7 +497,7 @@ void EmptyLinkFunctionForGeneratedCodeShooterCharacter() {}
 	{
 		((AShooterCharacter*)Obj)->CrouchPressed = 1;
 	}
-	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_AShooterCharacter_Statics::NewProp_CrouchPressed = { UE4CodeGen_Private::EPropertyClass::Bool, "CrouchPressed", RF_Public|RF_Transient|RF_MarkAsNative, (EPropertyFlags)0x0020080000000005, 1, nullptr, sizeof(bool), UE4CodeGen_Private::ENativeBool::Native, sizeof(AShooterCharacter), &Z_Construct_UClass_AShooterCharacter_Statics::NewProp_CrouchPressed_SetBit, METADATA_PARAMS(Z_Construct_UClass_AShooterCharacter_Statics::NewProp_CrouchPressed_MetaData, ARRAY_COUNT(Z_Construct_UClass_AShooterCharacter_Statics::NewProp_CrouchPressed_MetaData)) };
+	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_AShooterCharacter_Statics::NewProp_CrouchPressed = { UE4CodeGen_Private::EPropertyClass::Bool, "CrouchPressed", RF_Public|RF_Transient|RF_MarkAsNative, (EPropertyFlags)0x0020080000000025, 1, nullptr, sizeof(bool), UE4CodeGen_Private::ENativeBool::Native, sizeof(AShooterCharacter), &Z_Construct_UClass_AShooterCharacter_Statics::NewProp_CrouchPressed_SetBit, METADATA_PARAMS(Z_Construct_UClass_AShooterCharacter_Statics::NewProp_CrouchPressed_MetaData, ARRAY_COUNT(Z_Construct_UClass_AShooterCharacter_Statics::NewProp_CrouchPressed_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AShooterCharacter_Statics::NewProp_JogPressed_MetaData[] = {
 		{ "Category", "ShooterCharacter" },
@@ -497,7 +508,7 @@ void EmptyLinkFunctionForGeneratedCodeShooterCharacter() {}
 	{
 		((AShooterCharacter*)Obj)->JogPressed = 1;
 	}
-	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_AShooterCharacter_Statics::NewProp_JogPressed = { UE4CodeGen_Private::EPropertyClass::Bool, "JogPressed", RF_Public|RF_Transient|RF_MarkAsNative, (EPropertyFlags)0x0020080000000005, 1, nullptr, sizeof(bool), UE4CodeGen_Private::ENativeBool::Native, sizeof(AShooterCharacter), &Z_Construct_UClass_AShooterCharacter_Statics::NewProp_JogPressed_SetBit, METADATA_PARAMS(Z_Construct_UClass_AShooterCharacter_Statics::NewProp_JogPressed_MetaData, ARRAY_COUNT(Z_Construct_UClass_AShooterCharacter_Statics::NewProp_JogPressed_MetaData)) };
+	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_AShooterCharacter_Statics::NewProp_JogPressed = { UE4CodeGen_Private::EPropertyClass::Bool, "JogPressed", RF_Public|RF_Transient|RF_MarkAsNative, (EPropertyFlags)0x0020080000000025, 1, nullptr, sizeof(bool), UE4CodeGen_Private::ENativeBool::Native, sizeof(AShooterCharacter), &Z_Construct_UClass_AShooterCharacter_Statics::NewProp_JogPressed_SetBit, METADATA_PARAMS(Z_Construct_UClass_AShooterCharacter_Statics::NewProp_JogPressed_MetaData, ARRAY_COUNT(Z_Construct_UClass_AShooterCharacter_Statics::NewProp_JogPressed_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AShooterCharacter_Statics::NewProp_Camera_MetaData[] = {
 		{ "Category", "ShooterCharacter" },
@@ -508,6 +519,7 @@ void EmptyLinkFunctionForGeneratedCodeShooterCharacter() {}
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AShooterCharacter_Statics::NewProp_Camera = { UE4CodeGen_Private::EPropertyClass::Object, "Camera", RF_Public|RF_Transient|RF_MarkAsNative, (EPropertyFlags)0x002008000008000d, 1, nullptr, STRUCT_OFFSET(AShooterCharacter, Camera), Z_Construct_UClass_UCameraComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AShooterCharacter_Statics::NewProp_Camera_MetaData, ARRAY_COUNT(Z_Construct_UClass_AShooterCharacter_Statics::NewProp_Camera_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AShooterCharacter_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AShooterCharacter_Statics::NewProp_aimPitch,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AShooterCharacter_Statics::NewProp_SprintSpeed,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AShooterCharacter_Statics::NewProp_CrouchSpeed,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AShooterCharacter_Statics::NewProp_JogSpeed,
@@ -542,7 +554,7 @@ void EmptyLinkFunctionForGeneratedCodeShooterCharacter() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AShooterCharacter, 3243871786);
+	IMPLEMENT_CLASS(AShooterCharacter, 3145819289);
 	static FCompiledInDefer Z_CompiledInDefer_UClass_AShooterCharacter(Z_Construct_UClass_AShooterCharacter, &AShooterCharacter::StaticClass, TEXT("/Script/AnimStarterPack"), TEXT("AShooterCharacter"), false, nullptr, nullptr, nullptr);
 	DEFINE_VTABLE_PTR_HELPER_CTOR(AShooterCharacter);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

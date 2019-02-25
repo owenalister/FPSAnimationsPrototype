@@ -33,10 +33,10 @@ protected:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	UCameraComponent* Camera;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Replicated)
 	bool JogPressed;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Replicated)
 	bool CrouchPressed;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Enum)
@@ -45,7 +45,7 @@ protected:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	bool ADSPressed;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Replicated)
 	bool IsADS;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
@@ -57,6 +57,9 @@ protected:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	float SprintSpeed;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Replicated)
+	float aimPitch;
+	
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
@@ -105,5 +108,6 @@ public:
 	// Deactivate crouch flag
 	UFUNCTION()
 	void StopADS();
+	void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const;
 };
 

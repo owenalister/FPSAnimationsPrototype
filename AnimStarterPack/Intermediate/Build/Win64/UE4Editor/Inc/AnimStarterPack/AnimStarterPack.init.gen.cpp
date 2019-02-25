@@ -19,7 +19,7 @@ void EmptyLinkFunctionForGeneratedCodeAnimStarterPack_init() {}
 			static const UE4CodeGen_Private::FPackageParams PackageParams = {
 				"/Script/AnimStarterPack",
 				PKG_CompiledIn | 0x00000000,
-				0x8CC98AE9,
+				0xFB4B6E6F,
 				0x1C9B375A,
 				nullptr, 0,
 				METADATA_PARAMS(nullptr, 0)

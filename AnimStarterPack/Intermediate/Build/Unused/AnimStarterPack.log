@@ -4,11 +4,11 @@
   Using Visual Studio 2017 14.16.27023 toolchain (C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023) and Windows 10.0.17763.0 SDK (C:\Program Files (x86)\Windows Kits\10).
   Building 3 actions with 12 processes...
     [1/3] ShooterCharacter.cpp
-C:\Users\owen\Documents\GitHub\FPSAnimationsPrototype\AnimStarterPack\Source\AnimStarterPack\ShooterCharacter.cpp(21): warning C4996: 'USceneComponent::AttachTo': This function is deprecated, please use AttachToComponent instead. Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+C:\Users\owen\Documents\GitHub\FPSAnimationsPrototype\AnimStarterPack\Source\AnimStarterPack\ShooterCharacter.cpp(22): warning C4996: 'USceneComponent::AttachTo': This function is deprecated, please use AttachToComponent instead. Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
     C:\Program Files\Epic Games\UE_4.21\Engine\Source\Runtime\Engine\Classes\Components/SceneComponent.h(684): note: see declaration of 'USceneComponent::AttachTo'
-    [2/3] UE4Editor-AnimStarterPack-7946.lib
-       Creating library C:\Users\owen\Documents\GitHub\FPSAnimationsPrototype\AnimStarterPack\Intermediate\Build\Win64\UE4Editor\Development\AnimStarterPack\UE4Editor-AnimStarterPack-7946.lib and object C:\Users\owen\Documents\GitHub\FPSAnimationsPrototype\AnimStarterPack\Intermediate\Build\Win64\UE4Editor\Development\AnimStarterPack\UE4Editor-AnimStarterPack-7946.exp
-    [3/3] UE4Editor-AnimStarterPack-7946.dll
-       Creating library C:\Users\owen\Documents\GitHub\FPSAnimationsPrototype\AnimStarterPack\Intermediate\Build\Win64\UE4Editor\Development\AnimStarterPack\UE4Editor-AnimStarterPack-7946.suppressed.lib and object C:\Users\owen\Documents\GitHub\FPSAnimationsPrototype\AnimStarterPack\Intermediate\Build\Win64\UE4Editor\Development\AnimStarterPack\UE4Editor-AnimStarterPack-7946.suppressed.exp
+    [2/3] UE4Editor-AnimStarterPack-1249.lib
+       Creating library C:\Users\owen\Documents\GitHub\FPSAnimationsPrototype\AnimStarterPack\Intermediate\Build\Win64\UE4Editor\Development\AnimStarterPack\UE4Editor-AnimStarterPack-1249.lib and object C:\Users\owen\Documents\GitHub\FPSAnimationsPrototype\AnimStarterPack\Intermediate\Build\Win64\UE4Editor\Development\AnimStarterPack\UE4Editor-AnimStarterPack-1249.exp
+    [3/3] UE4Editor-AnimStarterPack-1249.dll
+       Creating library C:\Users\owen\Documents\GitHub\FPSAnimationsPrototype\AnimStarterPack\Intermediate\Build\Win64\UE4Editor\Development\AnimStarterPack\UE4Editor-AnimStarterPack-1249.suppressed.lib and object C:\Users\owen\Documents\GitHub\FPSAnimationsPrototype\AnimStarterPack\Intermediate\Build\Win64\UE4Editor\Development\AnimStarterPack\UE4Editor-AnimStarterPack-1249.suppressed.exp
   Deploying AnimStarterPackEditor Win64 Development...
-  Total build time: 5.92 seconds (Parallel executor: 1.79 seconds)
+  Total build time: 5.49 seconds (Parallel executor: 1.56 seconds)
